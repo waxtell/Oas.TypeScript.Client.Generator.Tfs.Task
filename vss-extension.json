@@ -1,0 +1,34 @@
+{
+    "manifestVersion": 1,
+    "id": "Oas-TypeScript-Client-Generator-Task",
+    "name": "OAS TypeScript Client Generator",
+    "version": "1.0.1",
+    "publisher": "WillAxtell",
+    "targets": [
+        {
+            "id": "Microsoft.TeamFoundation.Server"
+        }
+    ],    
+    "description": "Generate TypeScript Client SDK from OAS",
+    "categories": "Integrate",
+    "icons": {
+        "default": "images/icon.png"
+    },
+    "files": [
+        {
+            "path": "generateClientTask"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "generateClientTask"
+            }
+        }
+    ]
+}

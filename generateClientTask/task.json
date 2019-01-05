@@ -1,0 +1,86 @@
+{
+    "id": "0425e83d-fa3d-4d72-93bb-731c74e907b9",
+    "name": "Oas.TypeScript.Client.Generator.Task",
+    "friendlyName": "TypeScript Client SDK Generator",
+    "description": "Generate TypeScript Client SDK from OAS",
+    "helpMarkDown": "",
+    "category": "Azure Artifacts",
+    "author": "Will Axtell",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "instanceNameFormat": "Generate TypeScript Client SDK",
+    "inputs": [
+        {
+            "name": "input",
+            "type": "string",
+            "label": "OAS File",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "File that contains the Open API Specification"
+        },
+        {
+            "name": "output",
+            "type": "string",
+            "label": "Output File",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The output file path"
+        },
+        {
+            "name": "classname",
+            "type": "string",
+            "label": "Class Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The class name of the generated client"
+        },
+        {
+            "name": "modulename",
+            "type": "string",
+            "label": "Module Name",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The TypeScript module name"
+        },
+        {
+            "name": "namespace",
+            "type": "string",
+            "label": "Namespace",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The TypeScript namespace"
+        },
+        {
+            "name": "template",
+            "type": "pickList",
+            "label": "Template",
+            "defaultValue": "Fetch",
+            "required": true,
+            "helpMarkDown": "The type of the asynchronism handling",
+            "options": {
+                "JQueryCallbacks": "JQueryCallbacks",
+                "JQueryPromises": "JQueryPromises",
+                "AngularJS": "AngularJS",
+                "Angular": "Angular",
+                "Fetch": "Fetch",
+                "Aurelia": "Aurelia"
+            }
+        },
+        {
+            "name": "additionalparams",
+            "type": "string",
+            "label": "Additional Parameters",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Provide optional parameters to NSwag"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
